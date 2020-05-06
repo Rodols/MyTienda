@@ -38,6 +38,12 @@ nav a{
   width: 46px;
 }
 
+.brand span{
+  text-shadow: black 3px 3px 3px ;
+  font-family: fantasy;
+  font-size:1.5em;
+}
+
 .user .logo{
   margin-right: 1px;
   border-radius: 50%;
@@ -69,6 +75,7 @@ nav .form-search{
   box-shadow: rgb(233, 10, 10) 2px 2px 2px;
   height: 25px;
   width: 80%;
+  text-align:center;
 }
 
 
@@ -79,8 +86,6 @@ nav .user{
   height:50px;
   flex-grow: 1;
 }
-
-
 
 
 ul li {
@@ -110,3 +115,40 @@ ul li ul li:hover {
   background:#FF809A;
 }
 
+@media screen and (max-width:640px){
+
+  nav{
+   flex-wrap:wrap;
+  }
+
+  nav .brand{
+    width:100%;
+    flex-grow:1;
+  }
+
+  .logo {
+    margin-right: 8px;
+  }
+
+  nav .form-search{
+    flex-grow: 1;
+  }
+
+  nav .user{
+    flex-grow:1;
+  }
+
+  .form-search input {
+    width:75%
+  }
+
+  fa-icon{
+    margin-left:5px;
+  }
+
+  ul li ul  {
+   left: 70%;
+  }
+
+
+}
