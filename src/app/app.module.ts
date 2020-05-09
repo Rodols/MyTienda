@@ -9,6 +9,13 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { FormsModule } from '@angular/forms';
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule} from '@angular/fire/auth';
+import { environment } from 'src/environments/environment';
+
+
 
 
 @NgModule({
@@ -22,7 +29,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   imports: [
     BrowserModule,
     FontAwesomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
