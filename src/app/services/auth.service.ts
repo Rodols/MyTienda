@@ -14,6 +14,13 @@ export class AuthService {
     return user;
   }
 
+  async Register(email, password){
+    const user = await this.firebaseAuth.createUserWithEmailAndPassword(email, password);
+    return user;
+  }
+
+
+
   async LogOut() {
     try {
       await this.firebaseAuth.signOut();
