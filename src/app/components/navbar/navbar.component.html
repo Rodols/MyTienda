@@ -2,26 +2,36 @@
   <nav>
     <div class="brand">
       <img class="logo" src="../../../assets/img/tienda-online-icono.png">
-      <span>Tienda de Ely</span>
+     <a href="home"><span>Tienda de Ely</span>
+     </a>
     </div>
     <div class="form-search">
       <input type="text" placeholder="Buscar">
-      <a href="/login">
+      <a href="/home">
         <fa-icon [icon]="faSearch"></fa-icon>
       </a>
     </div>
     <div class="user">
-      <img class="logo" src="../../../assets/img/avatar.png">
+      <img class="logo" src="../../../assets/img/login_dafault.png">
       <ul>
         <li>
-          <a href="/login">
+          <span>
             <fa-icon [icon]="faAngleDown"></fa-icon>
-          </a>
-          <ul>
-            <li><a href="#">Ajustes</a></li>
-            <li><a href="#">Carrito</a></li>
-            <li><a href="#" (click)="LogOut()" >Salir</a></li>
-          </ul>
+          </span>
+          <div *ngIf="user$ | async as user; else loggedOut">
+            <ul>
+              <li><a href="#">{{user?.email}}</a></li>
+              <li><a href="#">Ajustes</a></li>
+              <li><a href="#">Carrito</a></li>
+              <li><a routerLink="/home" (click)="LogOut()">Salir</a></li>
+            </ul>
+          </div>
+          <ng-template #loggedOut>
+            <ul>
+              <li><a routerLink="/registro">Registrarte</a></li>
+              <li><a routerLink="/login">Ingresar</a></li>
+            </ul>
+          </ng-template>
         </li>
       </ul>
     </div>

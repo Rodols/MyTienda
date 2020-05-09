@@ -30,18 +30,18 @@ nav a{
   text-decoration: none;
   color: whitesmoke;
   font-weight: bold;
-  font-size: large;
+  font-size: 1em;
 }
 
 .logo {
-  margin-right: 15px;
-  width: 46px;
+  margin-right: 12px;
+  width: 45px;
 }
 
 .brand span{
   text-shadow: black 3px 3px 3px ;
   font-family: fantasy;
-  font-size:1.5em;
+  font-size:1.3em;
 }
 
 .user .logo{
@@ -102,13 +102,16 @@ ul li:hover ul {
 ul li ul  {
   position: absolute;
   text-align: center;
-  width: 100px;
+  width: 180px;
+  top: 50px;
+  left: 76%;
   display: none;
 }
 
 ul li ul li { 
   background:#CC1F99; 
   display: block; 
+  padding: 4px;
 }
 
 ul li ul li:hover {
@@ -147,7 +150,8 @@ ul li ul li:hover {
   }
 
   ul li ul  {
-   left: 70%;
+   left: 62%;
+   top:5px
   }
 
 

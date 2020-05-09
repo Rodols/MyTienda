@@ -1,29 +1,29 @@
-import { Injectable } from '@angular/core';          
+import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app'
-import { Observable } from 'rxjs';
+import { first, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  user: Observable<firebase.User>;
 
-  constructor( private firebaseAuth: AngularFireAuth ) {
-    this.user = firebaseAuth.authState;
-   }
+  constructor(public firebaseAuth: AngularFireAuth) { }
 
-  LogIn(email, password){
-    this.firebaseAuth.signInWithEmailAndPassword(email, password).then(user =>{
-      console.log("funciono: ", user);
-    })
-    .catch(err =>{
-      console.log("Error al logearse: ", err)
-    });
+  async LogIn(email, password) {
+    const user = await this.firebaseAuth.signInWithEmailAndPassword(email, password);
+    return user;
   }
 
-  LogOut(){
-    this.firebaseAuth.signOut().then(()=>console.log("sesion cerrada"));
+  async LogOut() {
+    try {
+      await this.firebaseAuth.signOut();
+    } catch (error) {
+      console.log(error);
+    }
   }
- 
+
+  getCurrentUser() {
+    return this.firebaseAuth.authState.pipe(first()).toPromise();
+  }
+
 }
