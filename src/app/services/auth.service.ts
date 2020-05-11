@@ -10,16 +10,27 @@ export class AuthService {
   constructor(public firebaseAuth: AngularFireAuth) { }
 
   async LogIn(email, password) {
-    const user = await this.firebaseAuth.signInWithEmailAndPassword(email, password);
-    return user;
+    try {
+      const user = await this.firebaseAuth.signInWithEmailAndPassword(email, password);
+      return user;
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   async Register(email, password){
-    const user = await this.firebaseAuth.createUserWithEmailAndPassword(email, password);
-    return user;
+    try {
+      const user = await this.firebaseAuth.createUserWithEmailAndPassword(email, password);
+      this.sendVerificationEmail();
+      return user;
+    } catch (error) {
+      console.log(error);
+    }
   }
 
-
+  async sendVerificationEmail():Promise<void>{
+    return (await this.firebaseAuth.currentUser).sendEmailVerification();
+  }
 
   async LogOut() {
     try {
@@ -27,10 +38,6 @@ export class AuthService {
     } catch (error) {
       console.log(error);
     }
-  }
-
-  getCurrentUser() {
-    return this.firebaseAuth.authState.pipe(first()).toPromise();
   }
 
 }

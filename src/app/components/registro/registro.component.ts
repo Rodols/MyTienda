@@ -18,7 +18,7 @@ user = new User();
   Register(){
     this.auth.Register(this.user.email, this.user.password).then(user=>{
       if(user){
-        this.router.navigate(['/home']);
+        this.router.navigate(['/verificacion-correo']);
       }
     });
   }

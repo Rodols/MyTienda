@@ -1,0 +1,48 @@
+/* Paleta de colores
+#1FC9CC
+#639899
+#40FF96
+#FF809A
+#CC1F99
+*/
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 1px 1px 5px 1px rgb(204, 31, 153, 0.3);
+}
+
+.card-title {
+    color: #CC1F99;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.card-body{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.card-footer button{
+    background-color: #CC1F99;
+    color: whitesmoke;
+    padding: 10px;
+    border: #FF809A solid 1px;
+    border-radius: 3px;
+}
+
+
+

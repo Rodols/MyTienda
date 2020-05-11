@@ -53,6 +53,11 @@ color: rgb(243, 164, 219);
 text-align: center;
 }
 
+.item-form p {
+  margin-top: 20px;
+font-size: 0.7em;
+  }
+
 
 button{
     width: 100px;
@@ -61,5 +66,5 @@ button{
     border:rgb(248, 216, 222) solid 1px;
     border-radius: 3px;
     padding: 8px;
-    margin-top: 25px;
+    margin-top: 8px;
 }

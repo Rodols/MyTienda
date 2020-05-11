@@ -20,9 +20,12 @@ export class LoginComponent implements OnInit {
   async LogIn() {
     try {
       const user = await this.auth.LogIn(this.user.email, this.user.password);
-      if (user) {
-        console.log("Biernvenido! ", user)
-        this.router.navigate(['home']);
+      if (user && user.user.emailVerified) {
+        this.router.navigate(['/home']);
+      }else if(user){
+        this.router.navigate(['/verificacion-correo']);
+      }else{
+        this.router.navigate(['/register']);
       }
     } catch (error) {
       console.log(error);

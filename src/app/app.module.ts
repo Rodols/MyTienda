@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule} from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
+import { SendEmailComponent } from './components/send-email/send-email.component';
 
 
 
@@ -24,7 +25,8 @@ import { environment } from 'src/environments/environment';
     HomeComponent,
     LoginComponent,
     NavbarComponent,
-    RegistroComponent
+    RegistroComponent,
+    SendEmailComponent
   ],
   imports: [
     BrowserModule,
