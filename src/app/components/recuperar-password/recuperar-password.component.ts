@@ -6,7 +6,6 @@ import { Router } from '@angular/router';
   selector: 'app-recuperar-password',
   templateUrl: './recuperar-password.component.html',
   styleUrls: ['./recuperar-password.component.css'],
-  providers:[AuthService]
 })
 export class RecuperarPasswordComponent implements OnInit {
 email:string ="";

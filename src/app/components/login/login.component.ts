@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   async LogIn() {
     try {
       const user = await this.auth.LogIn(this.user.email, this.user.password);
-      if (user && user.user.emailVerified) {
+      if (user && user.emailVerified) {
         this.router.navigate(['/home']);
       }else if(user){
         this.router.navigate(['/verificacion-correo']);

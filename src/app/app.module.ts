@@ -13,9 +13,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule} from '@angular/fire/auth';
+import { AngularFirestore} from '@angular/fire/firestore';
+import { AngularFireDatabaseModule} from '@angular/fire/database';
+
 import { environment } from 'src/environments/environment';
 import { SendEmailComponent } from './components/send-email/send-email.component';
 import { RecuperarPasswordComponent } from './components/recuperar-password/recuperar-password.component';
+import { AuthService } from './services/auth.service';
 
 
 
@@ -38,7 +42,7 @@ import { RecuperarPasswordComponent } from './components/recuperar-password/recu
     AngularFireAuthModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthService,AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

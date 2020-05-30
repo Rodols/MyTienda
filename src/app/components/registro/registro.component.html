@@ -1,21 +1,36 @@
 <div class="container">
-    <div class="card-form">
-        <form>
-          <div class="item-form">
-            <h2>Registro</h2>
-            <img src="../../../assets/img/log.png">
-          </div>
-            <div class="item-form">
-              <label for="email">Correo</label>    
-              <input type="email" name="email" id="email" placeholder="Escribe tu correo" [(ngModel)]="user.email" >  
-            </div>
-            <div class="item-form">
-              <label for="password">Contraseña</label>    
-             <input type="password" name="password" id="password" placeholder="Escribe tu contraseña" [(ngModel)]="user.password">   
-            </div>
-            <div class="item-form">
-              <button (click)="Register();">Registrarme</button>  
-            </div>
-        </form>     
-    </div>
+  <div class="card-form">
+    <form>
+      <div class="item-form">
+        <h2>Registro</h2>
+        <img src="../../../assets/img/log.png">
+      </div>
+      <div class="item-form">
+        <label for="email">Nombre de usuario</label>
+        <input type="text" name="displayName" id="displayName" placeholder="Escribe un nombre" [(ngModel)]="user.displayName">
+      </div>
+      <div class="item-form">
+        <label for="email">Correo</label>
+        <input type="email" name="email" id="email" placeholder="Escribe tu correo" [(ngModel)]="user.email">
+      </div>
+      <div class="item-form">
+        <label for="password">Contraseña</label>
+        <input type="password" name="password" id="password" placeholder="Escribe tu contraseña"
+          [(ngModel)]="user.password">
+      </div>
+      <div class="item-form">
+        <label for="email">Direccion</label>
+        <input type="text" name="direction" id="direction" placeholder="Escribe tu direccion"
+          [(ngModel)]="user.direction">
+      </div>
+      <div class="item-form">
+        <label for="text">Numero de Celular</label>
+        <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Escribe tu direccion"
+          [(ngModel)]="user.phoneNumber">
+      </div>
+      <div class="item-form">
+        <button (click)="Register();">Registrarme</button>
+      </div>
+    </form>
+  </div>
 </div>

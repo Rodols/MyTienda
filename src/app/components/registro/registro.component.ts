@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../Models/User';
+import { IUser } from '../../Models/InterfaceUser';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router'
 
@@ -9,14 +9,14 @@ import { Router } from '@angular/router'
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit {
-user = new User();
+user: IUser = {};
   constructor( private auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   Register(){
-    this.auth.Register(this.user.email, this.user.password).then(user=>{
+    this.auth.Register(this.user).then(user=>{
       if(user){
         this.router.navigate(['/verificacion-correo']);
       }

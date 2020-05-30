@@ -1,7 +1,13 @@
-export interface IterfaceUser{
+export type Roles = 'CLIENTE' | 'ADMIN';
+
+export interface IUser{
 displayName?:string,
-emailVerifed?:boolean,    
+emailVerified?:boolean,    
 email?:string,
 uid?:string,
-phoneNumber?:string
+phoneNumber?:string,
+direction?:string,
+photoURL?:string,
+password?:string,
+role?:Roles
 }

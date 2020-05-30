@@ -20,7 +20,7 @@
           </span>
           <div *ngIf="user$ | async as user; else loggedOut">
             <ul>
-              <li><a href="#">{{user?.email}}</a></li>
+              <li><a href="#">{{user.displayName}}</a></li>
               <li><a href="#">Ajustes</a></li>
               <li><a href="#">Carrito</a></li>
               <li><a routerLink="/home" (click)="LogOut()">Salir</a></li>

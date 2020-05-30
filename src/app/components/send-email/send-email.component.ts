@@ -6,7 +6,6 @@ import { Observable } from 'rxjs';
   selector: 'app-send-email',
   templateUrl: './send-email.component.html',
   styleUrls: ['./send-email.component.css'],
-  providers:[AuthService]
 })
 export class SendEmailComponent implements OnInit {
 public user$: Observable<any>= this.auth.firebaseAuth.user;;
